@@ -16,7 +16,7 @@ function countGuessesLeft() {
 }
 
 //letters the user has guessed so far
-function UserGuesses() {
+function userGuesses() {
 	document.querySelector("#letter").innerHTML = "Letters Guessed: " + letterUser.join(', ');
 }
 
