@@ -1,0 +1,10 @@
+body {
+    background-image: url("https://zonecoverage.com/wp-content/uploads/2017/04/HAL-3000.png");
+    margin-top: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: lightgray;
+}
+
+.row {
+    margin-top: 20px;
+}
