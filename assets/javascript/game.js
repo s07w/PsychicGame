@@ -17,7 +17,7 @@ function countGuessesLeft() {
 
 //letters the user has guessed so far
 function UserGuesses() {
-	document.querySelector("#letter").innerHTML = "Letters Guessed: " + letterUser.join(' ');
+	document.querySelector("#letter").innerHTML = "Letters Guessed: " + letterUser.join(', ');
 }
 
 countGuessesLeft();
@@ -27,6 +27,7 @@ var restart = function() {
 	guessesLeft = 9;
 	letterUser = [];
 	var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+	console.log(computerGuess);
 }
 
 // onkeyup functions. 
@@ -37,20 +38,21 @@ document.onkeyup = function(event) {
 	//adds user key selection
 	letterUser.push(userGuess);
 	countGuessesLeft();
-	UserGuesses();
+	userGuesses();
 
 	if (userGuess === computerGuess){
 		wins++;
 		document.querySelector("#wins").innerHTML = "Wins: " + wins;
 		restart();
 	} 
+	//alerts if invalid key is pressed
 	else if (event.keyCode < 65 || event.keyCode > 90) {
 		alert("Invalid Entry");
 	}
 
 	else if (guessesLeft === 0) {
 		losses++;
-		document.querySelector("#lose").innerHTML = "Loses: " + losses;
+		document.querySelector("#lose").innerHTML = "Losses: " + losses;
 		restart();
 	}
 
